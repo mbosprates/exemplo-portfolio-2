@@ -32,6 +32,63 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*==================== ACCORDION SKILLS ====================*/
 
+const skillsItems = document.querySelectorAll('.skills__content')
+
+skillsItems.forEach((item) =>{
+    const skillsHeader = item.querySelector('.skills__header')
+
+    skillsHeader.addEventListener('click', () => {
+        const openItem = document.querySelector('.skills__open')
+
+        toggleSkills(item)
+        
+        if(openItem && openItem!== item){
+            toggleSkills(openItem)
+        }
+    })
+
+})
+
+const toggleSkills = (item) =>{
+    const skillsContentList = item.querySelector('.skills__list')
+
+    if(item.classList.contains('skills__open')){
+        item.classList.remove('skills__open')
+        item.classList.add('skills__close')
+    }else{
+        item.classList.add('skills__open')
+        item.classList.remove('skills__close')
+    }
+
+}
+
+
+
+
+
+// const skillsContent = document.getElementsByClassName('skills__content'),
+//       skillsHeader = document.querySelectorAll('.skills__header')
+
+// function toggleSkills(){
+//     let itemClass = this.parentNode.ClassName
+
+
+//     for(i = 0; i < skillsContent.length; i++){
+//         skillsContent[i].className = 'skills__content skills__close'
+//     }
+
+//     if(itemClass === 'skills__content skills__close'){
+//         this.parentNode.className = 'skills__content skills__open'
+//     }
+// }
+
+// skillsHeader.forEach((el) =>{
+//     el.addEventListener('click', toggleSkills)
+// })
+
+
+
+
 
 /*==================== QUALIFICATION TABS ====================*/
 
